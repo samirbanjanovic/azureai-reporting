@@ -1,0 +1,9 @@
+Summarize the error and identify the root cause. 
+Identify when it happened. 
+Identify where it happened.
+Identify what, if any, impact it had.
+Provide all parameter values for root cause analysis in a bullet list.
+
+==
+{{$input}}
+==
