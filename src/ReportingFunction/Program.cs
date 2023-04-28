@@ -20,11 +20,9 @@ var host = new HostBuilder()
         
         services.AddScoped<IKernel>(provider =>
         {
-            var logger = provider.GetRequiredService<ILogger<KernelBuilder>>();
             var skillsDirectory = Path.Combine(Directory.GetCurrentDirectory(), "skills");
             var kernel = Kernel
                             .Builder
-                            .WithLogger(logger)
                             .Build();
             
             kernel.Config.AddAzureTextCompletionService("davinci", context.Configuration["DeploymentName"], context.Configuration["Endpoint"], context.Configuration["ApiKey"]);

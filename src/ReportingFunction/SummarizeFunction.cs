@@ -22,17 +22,18 @@ namespace ReportingFunction
         public async Task<HttpResponseData> RunAsync([HttpTrigger(
                                         AuthorizationLevel.Function
                                         , "post"
-                                        , Route = "summarize")] HttpRequestData req)
+                                        , Route = "summarize")] HttpRequestData req
+                                        , CancellationToken cancellationToken)
         {
             // read in the request body
             var requestBody = req.ReadAsString();
             var response = req.CreateResponse(HttpStatusCode.OK);
-
+            
             var summarizeFunction = _sk.Func("SummarizeSkill", "Error");
 
 
-            var summary = await summarizeFunction.InvokeAsync(requestBody);
-
+            var summary = await summarizeFunction.InvokeAsync(requestBody, log: _logger, cancel: cancellationToken);
+            
             if (summary.ErrorOccurred)
             {
                 // return the error occurance from summary
