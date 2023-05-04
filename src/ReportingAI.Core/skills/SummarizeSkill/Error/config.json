@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "description": "Generate error summary",
+  "description": "Summarizes the error and provides insight and potential solution.",
   "type": "completion",
   "completion": {
     "max_tokens": 2000,

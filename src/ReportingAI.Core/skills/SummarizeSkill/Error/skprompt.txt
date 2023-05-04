@@ -2,7 +2,11 @@ Summarize the error and identify the root cause.
 Identify when it happened. 
 Identify where it happened.
 Identify what, if any, impact it had.
-Provide all parameter values for root cause analysis in a bullet list.
+Provide all parameters and their values for root cause analysis in a bullet list.
+
+List a couple potential solutions for the issue.
+
+List your sources.
 
 ==
 {{$input}}
